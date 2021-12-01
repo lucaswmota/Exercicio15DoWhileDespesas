@@ -51,9 +51,27 @@ namespace Exercicio15DoWhile
 
                     if (resp == "N")
                     {
-                        Console.WriteLine("Valor Total dos gastos: " + total.ToString("C"));
-                        Console.WriteLine("Encerrando...");
-                        Console.WriteLine("Programa encerrado.");
+                        Console.WriteLine("Valor Total dos gastos: " + total.ToString("C")+"" +
+                            "\nQuantas pessoas moram na casa?");
+                        int quantidadePessoas = int.Parse(Console.ReadLine());
+
+                        while (quantidadePessoas <= 0)
+                        {
+                            Console.WriteLine("Deve haver ao menos 1 pessoa para pagar as contas..." +
+                                "\nQuantas pessoas moram na casa ? ");
+                            
+                            quantidadePessoas = int.Parse(Console.ReadLine());
+                        }
+
+                        total /= quantidadePessoas;
+
+                        Console.WriteLine("O Total por pessoa é de: " + total.ToString("C")+"" +
+                            "\n");
+                        
+                        Console.WriteLine("Encerrando..." +
+                            "\n" +
+                            "\nPrograma encerrado.");
+                        
                         Console.ReadKey();
                         Environment.Exit(0);
                     }
